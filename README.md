@@ -1,4 +1,4 @@
-<h2><a href="http://textutils-textanalyzer-wordcounter.netlify.app/">Live Site</a></h2>
+<h1><a href="http://textutils-textanalyzer-wordcounter.netlify.app/">Live Site</a></h1>
 
 # Getting Started with Create React App
 
