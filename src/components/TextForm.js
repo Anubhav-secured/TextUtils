@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
-
-
+// import '../App.css'
 export default function TextForm(props) {
 
     const [text,setText]=useState('')
@@ -27,7 +26,6 @@ export default function TextForm(props) {
         let msg = new SpeechSynthesisUtterance();
         msg.text = text;
         window.speechSynthesis.speak(msg);
-
     }
 
     const handleCopy=()=>{
@@ -43,13 +41,12 @@ export default function TextForm(props) {
 
     const handleOnChange=(event)=>{
         setText(event.target.value)
-        
     }
 
   return (
     <>
         <div className="container" style={{color:props.mode==='dark'?'white':'rgb(16 15 16)'}}>
-            <h1 className='mb-4'>{props.heading}</h1>
+            <h1 className='mb-2 center' >{props.heading}</h1>
             <div className="mb-3">
                 <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='dark'?'#27242d':'white' ,color:props.mode==='dark'?'white':'rgb(16 15 16)' }} id="myBox" rows="8"></textarea>
             </div>
@@ -60,13 +57,24 @@ export default function TextForm(props) {
             <button disabled={text.length===0} className="btn btn-info mx-1 my-1" onClick={handleClear}>Clear Text</button>
             <button disabled={text.length===0} className="btn btn-warning mx-1 my-1" onClick={handleSpeak}>Speak</button>
         </div>
-        <div className="container my-3" style={{color:props.mode==='dark'?'white':'rgb(16 15 16)'}}>
-            <h2>Your text summary</h2>
-            <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words, {text.length} characters </p>
-            <p>{0.008* text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read.</p>
-            <h2>Preview</h2>
-            {text.length>0?text:"Nothing to Preview."}
+
+        <div className="container mt-5" style={{color:props.mode==='dark'?'white':'rgb(16 15 16)'}}>
+            <h3 className='my-3'>Your text summary</h3>
+
+            <div className='border border-secondary border-1 rounded px-2 py-2'>
+                <p>Words: {text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</p>
+                <p>Characters: {text.length}</p>
+                <p>Reading time: {0.008* text.split(" ").filter((element)=>{return element.length!==0}).length} minutes (assuming that a person reads at 150 words per minute) </p>
+            </div>
         </div>
+
+        <div className="container mt-3" style={{color:props.mode==='dark'?'white':'rgb(16 15 16)'}}>
+            <h3 className='my-2'>Preview</h3>
+            <div className='border border-secondary border-1 rounded px-2 py-2'>
+                {text.length>0?text:"Nothing to Preview!"}
+            </div>
+        </div>
+
     </>
   )
 }

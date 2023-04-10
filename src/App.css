@@ -36,7 +36,9 @@
     transform: rotate(360deg);
   }
 }
-
+.center {
+  text-align: center;
+}
 /* .container{
   color: red;
 } */
