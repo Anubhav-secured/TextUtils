@@ -1,3 +1,7 @@
 .accordion-button::after{
     filter: invert(1);
 }
+
+#center{
+    color: cyan;
+}

@@ -25,7 +25,7 @@ export default function About(props) {
                 </h2>
                 <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div className="accordion-body" style={mystyle}>
-                   TextUtils gives you a way to analyze your text. It can be either word count, character count, copy text, remove extra spaces, clear text or speak functionality.
+                   TextAnalyzer gives you a way to analyze your text. It can be either word count, character count, copy text, remove extra spaces, clear text or speak functionality.
                 </div>
                 </div>
             </div>
@@ -37,8 +37,8 @@ export default function About(props) {
                 </h2>
                 <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div className="accordion-body" style={mystyle}>
-                    TextUtils is a free text utility app that provides instant character count, word count, lowecase to uppercase, uppercase to lowercase, copy text, remove extra space and speak feature. <br />
-                    TextUtils provides the number of words and characters. Thus it is suitable for writing text with word/character limit.
+                    TextAnalyzer is a free text utility app that provides instant character count, word count, lowecase to uppercase, uppercase to lowercase, copy text, remove extra space and speak feature. <br />
+                    TextAnalyzer provides the number of words and characters. Thus it is suitable for writing text with word/character limit.
                 </div>
                 </div>
             </div>
